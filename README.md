@@ -118,6 +118,21 @@ These generated files are ignored by Git and are recreated when the program runs
 
 ## Testing
 
+### Automated Unit Testing
+Run the automated test suite from PowerShell:
+
+```powershell
+javac -d out (Get-ChildItem -Recurse -Filter *.java src | ForEach-Object { $_.FullName })
+java -cp out retailstore.TestRunner
+```
+
+### Automated Grader Demo Mode
+Run the non-interactive validation:
+
+```powershell
+java -cp out retailstore.Main --demo
+```
+
 Manual test cases:
 
 | Test | Expected Result |
