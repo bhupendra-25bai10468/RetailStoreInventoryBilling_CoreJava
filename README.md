@@ -34,6 +34,7 @@ No MySQL, SQLite, JDBC, JPA, GUI, Maven, or external libraries are required.
 RetailStoreInventoryBilling_CoreJava/
 ├── src/
 │   └── retailstore/
+|       ├── TestRunner.java
 │       ├── Main.java
 │       ├── model/
 │       │   ├── Product.java
@@ -116,7 +117,9 @@ These generated files are ignored by Git and are recreated when the program runs
 - Subtotal from ₹2,000 to ₹4,999.99: 5% discount
 - Subtotal ₹5,000 or more: 10% discount
 
-## Testing
+## Testing 
+
+java -cp out retailstore.TestRunner
 
 ### Automated Unit Testing
 Run the automated test suite from PowerShell:
