@@ -1,5 +1,6 @@
-import retailstore.exception.InsufficientStockException;
 package retailstore.model;
+
+import retailstore.exception.InsufficientStockException;
 
 public class Product {
     private int id;
