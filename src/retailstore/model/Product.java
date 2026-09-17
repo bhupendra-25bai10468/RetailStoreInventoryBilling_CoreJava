@@ -1,3 +1,4 @@
+import retailstore.exception.InsufficientStockException;
 package retailstore.model;
 
 public class Product {
@@ -67,9 +68,9 @@ public class Product {
         quantity += amount;
     }
 
-    public void reduceStock(int amount) {
+    public void reduceStock(int amount) throws InsufficientStockException {
         if (amount <= 0 || amount > quantity) {
-            throw new IllegalArgumentException("Invalid stock reduction.");
+            throw new InsufficientStockException("Insufficient stock.");
         }
         quantity -= amount;
     }
