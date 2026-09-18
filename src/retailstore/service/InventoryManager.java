@@ -24,6 +24,18 @@ public class InventoryManager {
         products.remove(product);
     }
 
+    public void restockProduct(int id, int amount) throws ProductNotFoundException {
+    Product product = findProduct(id);
+
+    if (product == null) {
+        throw new ProductNotFoundException(
+                "Product with ID " + id + " not found."
+        );
+    }
+
+    product.addStock(amount);
+    }
+    
     public Product findProduct(int id) {
         for (Product product : products) {
             if (product.getId() == id) {
