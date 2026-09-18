@@ -98,6 +98,7 @@ classDiagram
         -List~Product~ products
         +addProduct(Product)
         +removeProduct(int)
+        +restockProduct(int, int)
         +findProduct(int)
     }
 
