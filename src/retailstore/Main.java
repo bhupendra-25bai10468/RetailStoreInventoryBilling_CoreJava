@@ -105,14 +105,10 @@ public class Main {
 
     private static void restockProduct() throws ProductNotFoundException, IOException {
         int id = readInt("Enter product ID: ");
-        Product product = inventory.findProduct(id);
-
-        if (product == null) {
-            throw new ProductNotFoundException("Product with ID " + id + " not found.");
-        }
-
         int amount = readInt("Enter quantity to add: ");
-        product.addStock(amount);
+    
+        inventory.restockProduct(id, amount);
+    
         FileManager.saveInventory(inventory.getProducts());
         System.out.println("Stock updated successfully.");
     }
